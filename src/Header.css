@@ -1,0 +1,24 @@
+.header-main-container{
+  width: 100%; 
+  box-sizing: border-box;
+  padding: 25px 35px; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header-personal-name{
+  font-family: Roboto;
+  font-weight: 900;
+  font-size: 20px;
+  margin: 0;
+}
+
+.header-change-language{
+  margin: 0; 
+  width: 38px; 
+}
+
+.header-change-language img {
+  width: 100%; 
+}
