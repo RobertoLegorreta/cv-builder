@@ -1,6 +1,25 @@
 .main-section{
   width: 650px; 
   margin: 0 auto; 
+  box-sizing: border-box;
+}
+
+@media (max-width: 730px) {
+  .main-section{
+    width: 550px; 
+  }
+}
+
+@media (max-width: 650px) {
+  .main-section{
+    width: 450px; 
+  }
+}
+
+@media (max-width: 500px) {
+  .main-section{
+    width: 300px; 
+  }
 }
 
 .main-section-profile-picture{
@@ -44,6 +63,7 @@
   border-radius: 150px;
   margin: 0;
   margin-right: 15px;
+  border: 2px solid white;
 }
 
 .main-section-description-buble-job-title{
