@@ -1,12 +1,12 @@
 import React from 'react';
 import './Header.css';
 
-function Header() {
+function Header(props) {
   return (
     <div className="header-main-container">
      <p className="header-personal-name">ROBERTO LEGORRETA</p>
-     <figure className="header-change-language">
-      <img src="./objects/usa-flag.svg" alt="Select language"></img>
+     <figure id="languageButton" className="header-change-language" onClick={props.handleClick}>
+      <img src={`./objects/flag-${props.lang === "en"? "es": "en"}.svg`} alt="Select language"></img>
      </figure>
     </div>
   );

@@ -23,6 +23,7 @@
 .header-change-language{
   margin: 0; 
   width: 38px; 
+  cursor: pointer;
 }
 
 .header-change-language img {
