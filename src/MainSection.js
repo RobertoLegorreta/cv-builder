@@ -1,7 +1,6 @@
 import React from 'react';
 import AboutMe from './AboutMe'; 
 import Experience from './Experience';
-import Projects from './Projects';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import './MainSection.css';
