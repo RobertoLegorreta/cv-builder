@@ -1,3 +1,10 @@
+module.exports.personalInformation = {
+  "name": "Roberto Legorreta", 
+  "phone": "3112595467", 
+  "email": "info@robertolegorreta.com", 
+  "linkedin": "https://www.linkedin.com/in/rlegorreta/"
+}
+
 module.exports.aboutMe = {
   "en": `TLDR: Entrepreneur, Software Developer, UX/UI Designer. <br><br>In recent years I have focused on improving people's quality life developing solution for some of the most common problems such as transport us in a more comfortable and safer way or easily find properties adapted to our needs among other issues. I love to work with small teams to build solutions from scratch. I have had the opportunity to work with startups from Silicon Valley, México and people from all around the world. I am always learning, love challenges, travel to different cities and  meet amazing people. <br><br>I was born to serve and help others and I believe that I can change and improve this world.`, 
   "es":  `Emprendedor, Desarrollador de software, Diseñador UX/UI. <br><br>En los últimos años me he enfocado en mejorar la calidad de vida de las personas, desarrollando soluciones para algunas de las problemáticas que más impacto tienen en la población, como transportarse de una formamás cómoda y segura, encontrar propiedades de forma sencilla basado en las necesidades de cada invididuo entre otros. Me encanta trabajar con pequeños equipos para construir soluciones desde cero. He tenido la oportunidad de trabajar con startups de Silicon Valley así como de México y colaborar con asombrosas personas de todo el mundo. Siempre estoy aprendiendo, amo los retos, viajar a distintas ciudades y conocer a personas maravillosas.`

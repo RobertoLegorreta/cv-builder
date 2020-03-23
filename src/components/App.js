@@ -24,8 +24,8 @@ class App extends React.Component {
 
   renderCV(){
     document.getElementById('loading').style.display = "flex";
+    document.getElementById('main-section-personal-information').style.display = "block"; 
     const mainSection = document.getElementById('main-section'); 
-    console.log(mainSection.offsetHeight);
     //Add classes
     mainSection.classList.add("mainSectionPDF"); 
     mainSection.getElementsByClassName('main-section-profile-picture')[0].classList.add('profilePicturePDF');
@@ -44,7 +44,6 @@ class App extends React.Component {
 
     document.getElementById('downloadButton').classList.add("hide"); 
     document.getElementById('languageButton').classList.add("hide"); 
-    console.log(mainSection.offsetHeight);
     //Add classes
 
     //Fix canvas problem
@@ -63,7 +62,6 @@ class App extends React.Component {
     setTimeout(()=> {
       html2canvas(mainSection)
       .then((canvas) => {
-        console.log(mainSection.offsetHeight);
         var pdf = new jsPDF({
           orientation: 'p',
           unit: 'mm',
@@ -78,6 +76,7 @@ class App extends React.Component {
 
       setTimeout(() => {
         //Remove classes
+        document.getElementById('main-section-personal-information').style.display = "none"; 
         mainSection.classList.remove("mainSectionPDF");
         mainSection.getElementsByClassName('main-section-profile-picture')[0].classList.remove('profilePicturePDF'); 
         for(let i = 0; i < mainSection.getElementsByClassName('main-section-description-title').length; i++){
