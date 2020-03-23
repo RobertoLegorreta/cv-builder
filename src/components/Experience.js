@@ -16,10 +16,10 @@ function Experience(props) {
 function job(jobTitle, company, date, description){
   return(
     <div>
-      <div>
-        <p className="main-section-description-buble main-section-description-buble-job-title">{jobTitle}</p>
-        <p className="main-section-description-buble">{company}</p>
-        <p className="main-section-description-buble">{date}</p>
+      <div className="main-section-bubbles-container">
+        <p className="main-section-description-bubble main-section-description-bubble-job-title">{jobTitle}</p>
+        <p className="main-section-description-bubble">{company}</p>
+        <p className="main-section-description-bubble">{date}</p>
       </div>
       <p className="main-section-description">{description}</p>
     </div>
@@ -29,9 +29,9 @@ function job(jobTitle, company, date, description){
 function project(projectName, link, description){
   return(
     <div>
-      <div>
-        <p className="main-section-description-buble">{projectName}</p>
-        <a href={link} target="_blank" rel="noopener noreferrer"><p className="main-section-description-buble main-section-description-buble-link">{link}</p></a>
+      <div className="main-section-bubbles-container">
+        <p className="main-section-description-bubble">{projectName}</p>
+        <a href={link} target="_blank" rel="noopener noreferrer"><p className="main-section-description-bubble main-section-description-bubble-link">{link}</p></a>
       </div>
       <p className="main-section-description">{description}</p>
     </div>

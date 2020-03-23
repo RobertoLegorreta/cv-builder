@@ -5,7 +5,7 @@ import '../css/MainSection.css';
 
 function MainSection(props) {
   return (
-    <div className="main-section">
+    <div id="main-section" className="main-section">
       <figure className="main-section-profile-picture">
         <img src="./objects/profile-picture.jpg" alt="Profile"></img>
       </figure>

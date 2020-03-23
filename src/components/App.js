@@ -23,34 +23,97 @@ class App extends React.Component {
   }
 
   renderCV(){
-    const input = document.getElementById('root');
-    const downloadButton = document.getElementById('downloadButton');
-    const languageButton = document.getElementById('languageButton');
-    input.classList.add("setWidth"); 
-    downloadButton.classList.add("hide"); 
-    languageButton.classList.add("hide"); 
+    document.getElementById('loading').style.display = "flex";
+    const mainSection = document.getElementById('main-section'); 
+    console.log(mainSection.offsetHeight);
+    //Add classes
+    mainSection.classList.add("mainSectionPDF"); 
+    mainSection.getElementsByClassName('main-section-profile-picture')[0].classList.add('profilePicturePDF');
+    for(let i = 0; i < mainSection.getElementsByClassName('main-section-description-title').length; i++){
+      mainSection.getElementsByClassName('main-section-description-title')[i].classList.add('titlePDF');
+    }
+    for(let i = 0; i < mainSection.getElementsByClassName('main-section-description').length; i++){
+      mainSection.getElementsByClassName('main-section-description')[i].classList.add('paragraphPDF');
+    }
+    for(let i = 0; i < mainSection.getElementsByClassName('main-section-description-bubble').length; i++){
+      mainSection.getElementsByClassName('main-section-description-bubble')[i].classList.add('bubblesPDF');
+    }
+    for(let i = 0; i < document.getElementsByClassName('main-section-bubbles-container').length; i++){
+      document.getElementsByClassName('main-section-bubbles-container')[i].style.margin = "10px 0px 2px 0px"
+    }
+
+    document.getElementById('downloadButton').classList.add("hide"); 
+    document.getElementById('languageButton').classList.add("hide"); 
+    console.log(mainSection.offsetHeight);
+    //Add classes
+
+    //Fix canvas problem
+    window.scrollTo(0, 0);
+    // Get the current page scroll position 
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop; 
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft; 
   
+    // if any scroll is attempted, set this to the previous value 
+    window.onscroll = function() { 
+        window.scrollTo(scrollLeft, scrollTop); 
+    }; 
   
-    html2canvas(input)
+    
+
+    setTimeout(()=> {
+      html2canvas(mainSection)
       .then((canvas) => {
+        console.log(mainSection.offsetHeight);
         var pdf = new jsPDF({
           orientation: 'p',
           unit: 'mm',
-          format: 'b0',
-          });
-  
-        console.log(canvas);
-        pdf.addImage(canvas, 'JPEG', 0, 0);
+          format: 'a4',
+        });
+
+
+        
+        pdf.addImage(canvas, 'JPG', 10, 10, 190, mainSection.offsetHeight * 200 / 750);
         pdf.save("curriculum_vitae.pdf");  
       });
-    input.classList.remove("setWidth"); 
-    downloadButton.classList.remove("hide"); 
-    languageButton.classList.remove("hide"); 
+
+      setTimeout(() => {
+        //Remove classes
+        mainSection.classList.remove("mainSectionPDF");
+        mainSection.getElementsByClassName('main-section-profile-picture')[0].classList.remove('profilePicturePDF'); 
+        for(let i = 0; i < mainSection.getElementsByClassName('main-section-description-title').length; i++){
+          mainSection.getElementsByClassName('main-section-description-title')[i].classList.remove('titlePDF');
+        }
+        for(let i = 0; i < mainSection.getElementsByClassName('main-section-description').length; i++){
+          mainSection.getElementsByClassName('main-section-description')[i].classList.remove('paragraphPDF');
+        }
+        for(let i = 0; i < mainSection.getElementsByClassName('main-section-description-bubble').length; i++){
+          mainSection.getElementsByClassName('main-section-description-bubble')[i].classList.remove('bubblesPDF');
+        }
+        for(let i = 0; i < document.getElementsByClassName('main-section-bubbles-container').length; i++){
+          document.getElementsByClassName('main-section-bubbles-container')[i].style.margin = "0px 0px"
+        }
+  
+        document.getElementById('downloadButton').classList.remove("hide"); 
+        document.getElementById('languageButton').classList.remove("hide"); 
+        //Remove classes
+
+        //Scroll again
+        window.onscroll = function() { 
+          window.onscroll = function() {}; 
+        }; 
+        document.getElementById('loading').style.display = "none";
+      }, 500); 
+    }, 500); 
   }  
 
   render(){
     return (
       <div>
+        <div id="loading">
+          <figure>
+            <img src="./objects/loading.gif" alt="Loading"></img>
+          </figure>
+        </div>
         <Header handleClick={this.handleClick} lang={this.state.lang}></Header>
         <MainSection lang={this.state.lang} renderCV={this.renderCV}></MainSection>
       </div>
