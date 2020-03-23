@@ -67,6 +67,17 @@ module.exports.projects = [{
   }
 }, {
   "en": {
+    "name": "CV BUILDER", 
+    "website": "HTTPS://GITHUB.COM/ROBERTOLEGORRETA/CV-BUILDER", 
+    "description": "This website is the end result of the project. An open source project designed and developed by me, the purpose is to generate your personal website just changing plain text with the posibility to download your CV without the need for a server, everything is on the client side, easy to deploy, easy to configure."
+  }, 
+  "es": {
+    "name": "CV BUILDER", 
+    "website": "HTTPS://GITHUB.COM/ROBERTOLEGORRETA/CV-BUILDER", 
+    "description": "Esta página web es el resultado final del proyecto. Proyecto de código libre diseñado y desarrollado por mi, el propósito es generar tu página personal con solo cambiar texto plano, con la posibilidad de descargar tu CV sin la necesidad de un servidor, todo está del lado del cliente, fácil de lanzar, fácil de configurar."
+  }
+}, {
+  "en": {
     "name": "CHAT APP", 
     "website": "HTTPS://WWW.CHAT.ROBERTOLEGORRETA.COM", 
     "description": "When you are a developer, young and have all the time of the world, the only thing that comes to your mind is to develop your own Whatsapp, or at least thats what happened to me and I did it, I designed and developed a functional chat app from scratch, try it out and send me a message!"
