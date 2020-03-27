@@ -1,6 +1,7 @@
 module.exports.personalInformation = {
-  "name": "Roberto Legorreta", 
+  "name": "Roberto Legorreta Murillo", 
   "phone": "3112595467", 
+  "website": "https://www.robertolegorreta.com",
   "email": "info@robertolegorreta.com", 
   "linkedin": "https://www.linkedin.com/in/rlegorreta/"
 }

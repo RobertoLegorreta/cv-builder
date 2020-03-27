@@ -8,6 +8,7 @@ function AboutMe(props) {
       <div id="main-section-personal-information">
         <div>
           <p id="main-section-name">{data.personalInformation.name}</p>
+          <p id="main-section-name">{props.lang === "es"? "Página web: ": "Website: "}{data.personalInformation.website}</p>
           <p id="main-section-name">{props.lang === "es"? "Teléfono: ": "Phone number: "}{data.personalInformation.phone}</p>
         </div>
         <div>
